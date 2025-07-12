@@ -59,7 +59,7 @@ module.exports = {
                 test: /\.html$/,
                 use: ["html-loader"]
             }, {
-                test: /\.(svg|png|jpg)$/,
+                test: /\.(svg|png|jpg|ico)$/,
                 use: {
                     loader: "file-loader",
                     options: {
@@ -76,6 +76,7 @@ module.exports = {
         // This is used to create multiple html files into chunks 
         new HtmlWebpackPlugin({
             template: "./src/index.html",
+            favicon: "./src/logo.svg", // Use logo.svg as favicon
 
             // This is used to minify the html file 
             // This is used to remove the attribute quotes , collapse the whitespace , remove the comments 
