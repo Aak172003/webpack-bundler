@@ -27,6 +27,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "dist"),
         filename: "main.js",
+        // chunkFilename: "[name].bundle.[fullhash].js",
     },
     module: {
         rules: [
