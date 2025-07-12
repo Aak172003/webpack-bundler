@@ -42,3 +42,9 @@ npm i optimize-css-assets-webpack-plugin
 
 This is used to merge webpack file common file to file A and file B
 npm i webpack-merge
+
+-------------------------------------------------------------------------------------------------------------------
+
+now currently the problem is if i pass image with its path so o will not work , ye tbhi kaam krega jb mai isko import krke img tag me pass krunga 
+To make bundle of whole image so this above problem will fix we need to install a package known as 
+npm i copy-webpack-plugin

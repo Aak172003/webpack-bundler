@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("css-minimizer-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 // what is fullhash ? 
 // what is historyApiFallback
@@ -91,7 +92,13 @@ module.exports = {
             filename: "[name].[fullhash].css",
         }),
         // This is used to Optimise / Minimise the css 
-        new OptimizeCssAssetsPlugin()
+        new OptimizeCssAssetsPlugin(),
+        // This is used to copy the image from src to dist folder 
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "public", to: "assets/images" }
+            ]
+        })
     ],
     devServer: {
 
