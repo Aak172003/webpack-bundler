@@ -1,0 +1,25 @@
+So now abhi hamare jo bhi bundle bnta hai wo saara ek hi file me bn jata hai , so now hum chahte hai ki hamare saala bundle alag a;ag file me bne 
+
+like if we have 8 module so poore 8 module ka code bundle hokr ek hi file me aajaega jiise hamara saara bundle ek sth load hojaega , so wo bahut heavy pdta hai jbki hum us bundle ka saara code use na kr rhe ho particular time pr in browser 
+so with code splitting hum hr file ke apna bundle bnaenge , jo ki browser ki requirement ke base pr khali wohi load hoga jiski jarorat hai 
+
+-------------------------------------------------------------------------------------------------------------------
+
+To do this we need to install a library called react-loadable
+
+-------------------------------------------------------------------------------------------------------------------
+
+Here hume need hoti hai fullhash ka use krne ki because agr koi file load hoti hai browser me to browser uska cache bna leta hai so next time agr same file with new chnage load hoti hai to wo old ko hi consider krta hai new changes ko accept nhi krta 
+
+1 Way to provide name to very chunks inside webpack config file 
+chunkFilename: "[name].bundle.[fullhash].js",
+
+We can provide dynamic name to every chunk using magic comments
+const Home = lazy(() => import(
+  /* webpackChunkName: "Home" */  
+  './Home'));
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+Clean package which is used beacuse our requirements is jb bhi new build bne so purane wala delete hojae 
