@@ -1,0 +1,73 @@
+
+Webpack koi react ka feature nhi hai , webpack hum vuejs , andular jiske sth chaenge uske sth use kr skte hai 
+Kyuki webpack basically bundle bnane ke kaam aata hai 
+Jaise humari jb application complete hojati hai so uska hum build bnane jaate hai to hum npm run build krte hai to wo hamre poore files ko ek file me bundle krdeti hai , phr hum us bundle code ko run krte hai 
+But issue ye hai with npm run build isme hamare saara code chala jata hai bundle hokr jo ki file ko bahut heavy kr deta hai 
+
+But webpack is an open-source javascript module bundler so jb webpak ke through hum bundle bnaenge to wo js and css code ko minimy krke bundle bnata hai 
+
+Hum bundle bna skte hai within specific file 
+multiple css ke uske name se multiple bundle bn jaenge but after minify css 
+multiple js ke multiple bundle bn jaenge but after minify krke 
+
+isse ye hoga ki jis page pr hum jaenge to only us page ka bundle load hoga na ki saara bundle load hojaega , isse page ki speed bdh jaegi , isse web-vitals issue resolve ho jaenge 
+
+Topic w'll cover : 
+
+install webpack and configure 
+loaders css and scss -> first scss convert into css then bundle bnane ke bdd wo direct inject nhi hojate we have to inject manually 
+cache and plugin
+code splitting & webpack magic comment 
+cleanWebPackPlugin
+css chunks 
+minimise css
+remove comments and spaces -> jb hum num run build krte hai so usse jo bundle bnata hai usme comments line bhi include hojate hai so wo file ko heavy bna dete hai , so webpack se bundle bnate time hum un comments and extra spaces ko bhi remove kr skte hai 
+divide webpack dev , prod 
+
+-------------------------------------------------------------------------------------------------------------------
+
+This is the dev dependencies we need to install 
+1. npm i --save-dev webpack webpack-dev-server webpack-cli
+
+This is the plugin 
+2. npm i --save-dev @babel/core babel-loader @babel/preset-env @babel/preset-react
+
+3. npm i --save @babel/runtime
+
+4. npm i --save-dev @babel/plugin-transform-runtime
+
+
+-------------------------------------------------------------------------------------------------------------------
+If hum webpack se build developement ka bnate hai so wo hot-reloading support krna hai but if build production se bnate hai so wo hot-reloading support nhi krta hume refresh krna pdta hai to see the change 
+
+-------------------------------------------------------------------------------------------------------------------
+So hume mode via script bhi bhej skte hai or webpack me bhi configure kr skte hai 
+Method 1 -> configure in webpack.cofig.js
+mode: "development",
+
+Method 2 -> This is how we pass mode via script 
+"start": "webpack serve --mode development --open --hot",
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+Start is differnt thing and build is different thing 
+
+************************************************************************************************
+
+// But with webpack.config.js file 
+start server with developement mode
+"start:dev": "webpack serve --mode development --open --hot",
+
+start server with production mode
+"start:prod": "webpack serve --mode production --open --hot",
+
+************************************************************************************************
+
+// But with webpacktest.js file 
+start build project with developement mode
+"build:prod": "webpack --mode production --config webpacktest.js",
+
+start build project with production mode
+"build:dev": "webpack --mode development --config webpacktest.js",
+    
