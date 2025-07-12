@@ -23,3 +23,18 @@ const Home = lazy(() => import(
 -------------------------------------------------------------------------------------------------------------------
 
 Clean package which is used beacuse our requirements is jb bhi new build bne so purane wala delete hojae 
+
+npm i clean-webpack-plugin
+just add in plugin like 
+// This is used to clean the dist folder before building the new one , so that we don't have to delete it manually
+  new CleanWebpackPlugin()
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+This is used to create multiple css files into chunks 
+npm i mini-css-extract-plugin
+
+
+How to Optimise / Minimise the css 
+npm i optimize-css-assets-webpack-plugin
