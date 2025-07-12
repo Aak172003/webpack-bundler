@@ -31,10 +31,14 @@ just add in plugin like
 
 -------------------------------------------------------------------------------------------------------------------
 
-
 This is used to create multiple css files into chunks 
 npm i mini-css-extract-plugin
 
 
 How to Optimise / Minimise the css 
 npm i optimize-css-assets-webpack-plugin
+
+-------------------------------------------------------------------------------------------------------------------
+
+This is used to merge webpack file common file to file A and file B
+npm i webpack-merge
